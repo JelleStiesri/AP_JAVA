@@ -10,4 +10,16 @@ public class Pension {
         this.name = name;
     }
 
+    public  void addDog(String name) {
+        Dog hdog = new Dog(name); // Maakt hond met naam...
+        this.dogs.add(hdog); // Voegt hond aan de array dogs
+    }
+
+        public String toString(){
+        String doglist = "Pension: " + this.name + "\n" + "Lijst met honden: ";
+        for (Dog hdog : this.dogs){
+            doglist += hdog.toString() + ", ";
+        }
+        return doglist;
+    }
 }
