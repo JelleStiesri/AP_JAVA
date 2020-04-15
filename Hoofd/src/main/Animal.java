@@ -5,5 +5,5 @@ abstract class Animal {
     abstract String color();
     abstract String race();
     abstract String sound();
-    abstract int year(); // Year of Birth
+    abstract int year(); // Year of birth
 }
