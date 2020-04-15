@@ -10,7 +10,7 @@ public class Pension {
         this.name = name;
     }
 
-    public  void addDog(String name) {
+    public  void addAnimal(String name) {
         Dog hdog = new Dog(name); // Maakt hond met naam...
         this.dogs.add(hdog); // Voegt hond aan de array dogs
     }
