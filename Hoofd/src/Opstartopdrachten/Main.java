@@ -16,7 +16,7 @@ public class Main {
         z2.setDiepte(2.0);
 
 
-        System.out.println("Berekende Inhoud: " + z2.getInhoud());
+        System.out.println("Berekende Inhoud: \n" + z2.getInhoud());
         System.out.println(z2.toString());
 
     }
