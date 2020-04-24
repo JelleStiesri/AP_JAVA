@@ -7,7 +7,6 @@ public class Zaal implements Ruimte {
     private Film film;
     private double filmprijs;
 
-
     public Zaal(String nM, int St, Bioscoop bs) {
         this.zaalnaam = nM;
         this.stoelen = St;
