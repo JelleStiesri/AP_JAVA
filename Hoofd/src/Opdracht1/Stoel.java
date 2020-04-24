@@ -4,9 +4,7 @@ public class Stoel {
     private int nummer;
     private int rij;
     private boolean luxe;
-    private Bezoeker persoon;
     private Zaal zaal;
-
 
     public Stoel(int Nr, int Rj, boolean Lux, Zaal zL) {
         this.nummer = Nr;
@@ -15,16 +13,15 @@ public class Stoel {
         this.zaal = zL;
     }
 
-    public void setPersoon(Bezoeker bz) {
-        this.persoon = bz;
-    }
-
-    public double prijs() {
+    @Override
+    public String toString() {
+        String antwoord = "\n";
+        antwoord +=  String.format("Zitplek: %s - Rij: %s - Stoel: %s", zaal.getZaalnaam(), rij, nummer);
         if (luxe)
-            return zaal.getFilmprijs() * 1.5; // Luxe stoelen kosten 50% meer
+            antwoord += String.format("\n   Kosten ticket: %s € (Luxe stoelen)",zaal.getFilmprijs() * 1.5); // Luxe stoelen kosten 50% meer
         else
-            return zaal.getFilmprijs();
+            antwoord += String.format("\n   Kosten ticket: %s € (Normale stoelen)",zaal.getFilmprijs());;
+        antwoord += "\n" + zaal.toString();
+        return antwoord;
     }
-    
 }
-

@@ -1,27 +1,26 @@
 package Opdracht1;
 
-public class Bioscoop {
+public class Bioscoop implements Ruimte {
     private String naam;
     private String adres;
-    private Zaal zaal;
-
 
     public Bioscoop(String nM, String aD) {
         this.naam = nM;
         this.adres = aD;
     }
 
-    public void setZaal(Zaal zL) {
-        this.zaal = zL;
+    @Override
+    public boolean lichtAan(){
+        return true;
     }
 
+    @Override
+    public boolean opSlot(){
+        return false;
+    }
 
     @Override
     public String toString() {
-        String antwoord = "'"+naam+"'" + " - Adres: " + adres + "\n";
-//        antwoord += "Prijs stoel 10: " +
-
-        return antwoord;
-
+        return "'"+naam+"'" + " - Adres: " + adres + "\n";
     }
 }

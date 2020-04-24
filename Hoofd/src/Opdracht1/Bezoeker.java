@@ -5,12 +5,9 @@ public class Bezoeker {
     private boolean ticket;
     private Stoel stoel;
 
-    public Bezoeker(String nM) {
+    public Bezoeker(String nM, boolean tt) {
         this.naam = nM;
-    }
-
-    public boolean getTicket() {
-        return ticket;
+        this.ticket = tt;
     }
 
     public void setTicket(boolean tK) {
@@ -23,6 +20,17 @@ public class Bezoeker {
 
     @Override
     public String toString(){
-        return naam;
+        String antwoord = "";
+        if (ticket)
+            try {
+                antwoord +=  stoel.toString() + "\n";
+            }catch(NullPointerException e) {
+                antwoord += naam + " heeft nog geen stoel gereserveerd. \n";
+            }
+        else
+            antwoord += naam + " heeft nog geen ticket gekocht\n";
+
+
+        return antwoord;
     }
 }
