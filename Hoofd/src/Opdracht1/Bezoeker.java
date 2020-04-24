@@ -15,7 +15,8 @@ public class Bezoeker {
     }
 
     public void setStoel(Stoel sL) {
-        this.stoel = sL;
+        if (ticket) // Bezoeker kan geen stoel reserveren als deze nog geen ticket heeft
+            this.stoel = sL;
     }
 
     @Override
@@ -29,8 +30,6 @@ public class Bezoeker {
             }
         else
             antwoord += naam + " heeft nog geen ticket gekocht\n";
-
-
         return antwoord;
     }
 }

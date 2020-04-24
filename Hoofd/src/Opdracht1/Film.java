@@ -26,4 +26,3 @@ public class Film {
         this.prijs = pr;
     }
 }
-

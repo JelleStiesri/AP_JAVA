@@ -41,6 +41,4 @@ public class Zaal implements Ruimte {
     public String toString() {
         return String.format("Film: '%s' - Lengte: %s minuten", film.getNaam(), film.getLengte());
     }
-
-
 }
