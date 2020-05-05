@@ -28,12 +28,12 @@ public class Node {
     public String toString(char let) {
         String result = "";
         try {
-            if (let == key1) {
+            if (let == key1) { // Optie 1
                 result = option1.getName();
-            } else if (let == key2) {
+            } else if (let == key2) { // Optie 2
                 result = option2.getName();
             }
-        }catch (NullPointerException e) {
+        }catch (NullPointerException e) { // Wanneer een optie leeg is (en dus geen volgende stap heeft)
             result = "Error";
         }
         return result;

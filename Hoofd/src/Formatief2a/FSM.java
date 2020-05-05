@@ -1,10 +1,8 @@
 package Formatief2a;
 
-import java.lang.reflect.Array;
-
 public class FSM {
     private char[] woord;
-    private String Swoord;
+    private String Swoord; // Puur om te printen, geen functionele toevoeging
     private Node node0;
     private Node node1;
     private Node node2;
@@ -21,18 +19,20 @@ public class FSM {
 
     public String machine() {
         System.out.println("Woord: " + Swoord);
-        String result = "node0";
+        String result = "node0"; // Een FSM begint altijd bij node 0
         int index = 0;
         Node node = node0;
+
         while (index != woord.length) {
             String tussenresult = node.toString(woord[index]);
             if (tussenresult == "Error") { // Wanneer een overgang niet mogelijk is
-                result += "\nError op teken "+ (index+1) +"\n"  + (woord.length-(index+1)) + " teken(s) niet kunnen gebruiken";
+                result += "\nError op teken "+ (index+1) +"\n"  + (woord.length-(index+1)) +
+                        " teken(s) niet kunnen gebruiken" + "\n============================";
                 return result;
             }
             result += " - " + tussenresult ; // Voegt de volgende overgang toe aan de result lijst
 
-            if (result == "node0") {
+            if (tussenresult == "node0") { // Maakt de volgende node degene waar de laatste mee is geeindigd
                 node = node0;
             } else if (tussenresult == "node1") {
                 node = node1;
@@ -42,9 +42,8 @@ public class FSM {
                 node = node3;
             }
             index += 1;  // selecteert het vololgende teken in woord
-
         }
-        result += "\nSuccesvol afgerond";
+        result += "\nSuccesvol afgerond\n============================";
         return result;  // Wanneer er geen error komt
     }
 }
