@@ -26,7 +26,11 @@ public class FSM {
         while (index != woord.length) {
             String tussenresult = node.toString(woord[index]);
             if (tussenresult == "Error") { // Wanneer een overgang niet mogelijk is
-                result += "\nError op teken "+ (index+1) +"\n"  + (woord.length-(index+1)) +
+                result += "\nError op teken "+ (index+1) + "\n(Machine geeft geen volgende stap terug)" +"\n"  + (woord.length-(index+1)) +
+                        " teken(s) niet kunnen gebruiken" + "\n============================";
+                return result;
+            } else if (woord[index] != 'A' && woord[index] != 'B') {
+                result += "\nError op teken"+ (index+1) +"\n(Teken niet herkend als key)" + "\n"  + (woord.length-(index+1)) +
                         " teken(s) niet kunnen gebruiken" + "\n============================";
                 return result;
             }

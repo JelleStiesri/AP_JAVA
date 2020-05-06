@@ -18,9 +18,11 @@ public class Main {
         FSM fsm2 = new FSM("BAABAB", node0,node1,node2,node3); // test 2
         FSM fsm3 = new FSM("BABBAABABA", node0,node1,node2,node3); // test 3
         FSM fsm4 = new FSM("BABBAABAABA", node0,node1,node2,node3); // test 4
+        FSM fsm5 = new FSM("BABBAABCBA", node0,node1,node2,node3); // test 5
         System.out.println(fsm1.machine()); // Succesvolle afronding
         System.out.println(fsm2.machine()); // Error
         System.out.println(fsm3.machine()); // Succesvolle afronding
         System.out.println(fsm4.machine()); // Error
+        System.out.println(fsm5.machine()); // Error
     }
 }
