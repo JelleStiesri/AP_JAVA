@@ -21,7 +21,7 @@ public class FSM {
         System.out.println("Woord: " + Swoord);
         String result = "node0"; // Een FSM begint altijd bij node 0
         int index = 0;
-        Node node = node0;
+        Node node = node0; // Begint altijd bij 0
 
         while (index != woord.length) {
             String tussenresult = node.toString(woord[index]);
@@ -29,13 +29,14 @@ public class FSM {
                 result += "\nError op teken "+ (index+1) + "\n(Machine geeft geen volgende stap terug)" +"\n"  + (woord.length-(index+1)) +
                         " teken(s) niet kunnen gebruiken" + "\n============================";
                 return result;
-            } else if (woord[index] != 'A' && woord[index] != 'B') {
+            } else if (woord[index] != 'A' && woord[index] != 'B') { // Ik zou dit in de uiteindelijke opdracht veranderen naar de keys
                 result += "\nError op teken"+ (index+1) +"\n(Teken niet herkend als key)" + "\n"  + (woord.length-(index+1)) +
                         " teken(s) niet kunnen gebruiken" + "\n============================";
                 return result;
             }
             result += " - " + tussenresult ; // Voegt de volgende overgang toe aan de result lijst
 
+//            node  =  Class.forName(tussenresult);
             if (tussenresult == "node0") { // Maakt de volgende node degene waar de laatste mee is geeindigd
                 node = node0;
             } else if (tussenresult == "node1") {
