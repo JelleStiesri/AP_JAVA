@@ -7,8 +7,8 @@ public class Node {
     private Node option1;  // wanneer input = key1
     private Node option2;  // wanneer input = key2
 
-    public Node(String nM,char k1, char k2) {
-        this.name = nM;
+    public Node(String name,char k1, char k2) {
+        this.name = name;
         this.key1 = k1;
         this.key2 = k2;
     }
@@ -21,21 +21,16 @@ public class Node {
         this.option2 = op2;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String toString(char let) {
-        String result = "";
-        try {
-            if (let == key1) { // Optie 1
-                result = option1.getName();
-            } else if (let == key2) { // Optie 2
-                result = option2.getName();
-            }
-        }catch (NullPointerException e) { // Wanneer een optie leeg is (en dus geen volgende stap heeft)
-            result = "Error";
+    public Node giveNode(char let) {
+        if (let == key1) { // optie 1
+            return option1;
+        } else if (let == key2) {
+            return option2;
+        } else {
+            return null;}
         }
-        return result;
+
+    public String toString() {
+        return name;
     }
 }
