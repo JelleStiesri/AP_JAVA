@@ -5,7 +5,7 @@ public class FSM {
     private char[] woord;
     private String Swoord; // Puur om te printen, geen functionele toevoeging
     private ArrayList<Node> nodes; // array van nodes
-    private Node Nodenow;
+
 
     public FSM(String wR, ArrayList<Node> nodes) { // Node n0, Node n1, Node n2, Node n3
         this.woord = wR.toCharArray();
