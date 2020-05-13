@@ -40,13 +40,28 @@ public class Main {
         node6.setOption1(node2);
         node6.setOption2(end6);
 
-        System.out.println(node0.giveNode());
+        ArrayList<Node> nodeList = new ArrayList<Node>();
+        nodeList.add(node0);
+        nodeList.add(node1);
+        nodeList.add(node2);
+        nodeList.add(node3);
+        nodeList.add(node4);
+        nodeList.add(node5);
+        nodeList.add(node6);
+        nodeList.add(end1);
+        nodeList.add(end2);
+        nodeList.add(end3);
+        nodeList.add(end4);
+        nodeList.add(end5);
+        nodeList.add(end6);
 
+        DTMC dtmc1 = new DTMC(nodeList);
 
-
-
-
-
+        System.out.println(dtmc1.Machine()+"\n");
+        System.out.println(dtmc1.Machine()+"\n");
+        System.out.println(dtmc1.Machine()+"\n");
+        System.out.println(dtmc1.Machine()+"\n");
+        System.out.println(dtmc1.Machine()+"\n");
 
     }
 }

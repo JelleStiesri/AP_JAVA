@@ -1,6 +1,4 @@
 package Formatief2b;
-
-
 import java.util.*;
 
 public class DTMC {
@@ -20,11 +18,11 @@ public class DTMC {
             try {
                 index += 1;
                 Node nodeNew = nodeNow.giveNode();
-                NodeAnsList.add(index + 1, nodeNew);
+                NodeAnsList.add(index, nodeNew);
                 nodeNow = nodeNew;
-            } catch (NullPointerException e) {
+            } catch(NullPointerException e) {
                 System.out.println("STOP");
-                NodeAnsList.remove(index);
+                NodeAnsList.remove(index-1);
                 return NodeAnsList;
 
             }
