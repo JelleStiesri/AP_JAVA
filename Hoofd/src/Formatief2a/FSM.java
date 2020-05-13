@@ -22,7 +22,6 @@ public class FSM {
         ArrayList<Node> NodeAnsList = new ArrayList<Node>();
         NodeAnsList.add(0,nodeNow);
 
-
         for (index = 0; index < len; index++){
             try {
                 Node nodeNew = nodeNow.giveNode(woord[index]);
