@@ -11,8 +11,8 @@ public class DTMC {
     public ArrayList<Node> Machine() {
         int index = 0;
         Node nodeNow = nodes.get(0);
-        ArrayList<Node> NodeAnsList = new ArrayList<Node>();
-        NodeAnsList.add(0, nodeNow);
+        ArrayList<Node> NodeAnsList = new ArrayList<Node>(); // Antwoord array
+        NodeAnsList.add(0, nodeNow); // Zet stap 0 in array
 
         while (true) {
             try {
@@ -22,7 +22,7 @@ public class DTMC {
                 nodeNow = nodeNew;
             } catch(NullPointerException e) {
                 System.out.println("Eindigt na "+ (index-1)+" nodes");
-                NodeAnsList.remove(index-1);
+                NodeAnsList.remove(index-1); // Haalt 'null' weg uit array
                 return NodeAnsList;
             }
         }
