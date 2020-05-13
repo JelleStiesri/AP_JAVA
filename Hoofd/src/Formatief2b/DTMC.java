@@ -24,9 +24,7 @@ public class DTMC {
                 System.out.println("Eindigt na "+ (index-1)+" nodes");
                 NodeAnsList.remove(index-1);
                 return NodeAnsList;
-
             }
-
         }
     }
 

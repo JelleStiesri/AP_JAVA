@@ -38,7 +38,6 @@ public class Node {
         }
     }
 
-
     public int giveRandom() { // DIT MOET NOG GEFIXT WORDEN MET DE KANS
         Random r = new Random();
         int ans = r.nextInt(2); // random tussen 1 en 0

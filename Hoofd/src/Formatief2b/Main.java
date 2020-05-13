@@ -62,6 +62,5 @@ public class Main {
         System.out.println(dtmc1.Machine()+"\n");
         System.out.println(dtmc1.Machine()+"\n");
         System.out.println(dtmc1.Machine()+"\n");
-
     }
 }
