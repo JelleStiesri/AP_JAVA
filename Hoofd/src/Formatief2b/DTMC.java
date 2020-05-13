@@ -21,7 +21,7 @@ public class DTMC {
                 NodeAnsList.add(index, nodeNew);
                 nodeNow = nodeNew;
             } catch(NullPointerException e) {
-                System.out.println("STOP");
+                System.out.println("Eindigt na "+ (index-1)+" nodes");
                 NodeAnsList.remove(index-1);
                 return NodeAnsList;
 

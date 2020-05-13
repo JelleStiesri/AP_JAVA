@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Node node0 = new Node("Node-0");
+        Node node0 = new Node("Node-0"); // Maakt de nodes aan
         Node node1 = new Node("Node-1");
         Node node2 = new Node("Node-2");
         Node node3 = new Node("Node-3");
@@ -18,14 +18,14 @@ public class Main {
         node5.setChance(0.5,0.5);
         node6.setChance(0.5,0.5);
 
-        Node end1 = new Node("1 Oog");
+        Node end1 = new Node("1 Oog"); // Maakt de eindnodes aan
         Node end2 = new Node("2 Ogen");
         Node end3 = new Node("3 Ogen");
         Node end4 = new Node("4 Ogen");
         Node end5 = new Node("5 Ogen");
         Node end6 = new Node("6 Ogen");
 
-        node0.setOption1(node1);
+        node0.setOption1(node1); // Set alle opties
         node0.setOption2(node2);
         node1.setOption1(node3);
         node1.setOption2(node4);
@@ -40,7 +40,7 @@ public class Main {
         node6.setOption1(node2);
         node6.setOption2(end6);
 
-        ArrayList<Node> nodeList = new ArrayList<Node>();
+        ArrayList<Node> nodeList = new ArrayList<Node>(); // Maakt array met alle nodes voor machine
         nodeList.add(node0);
         nodeList.add(node1);
         nodeList.add(node2);
@@ -55,9 +55,9 @@ public class Main {
         nodeList.add(end5);
         nodeList.add(end6);
 
-        DTMC dtmc1 = new DTMC(nodeList);
+        DTMC dtmc1 = new DTMC(nodeList); // Maakt machine aan
 
-        System.out.println(dtmc1.Machine()+"\n");
+        System.out.println(dtmc1.Machine()+"\n"); // Test 5 keer
         System.out.println(dtmc1.Machine()+"\n");
         System.out.println(dtmc1.Machine()+"\n");
         System.out.println(dtmc1.Machine()+"\n");

@@ -27,8 +27,7 @@ public class Node {
 
     public Node giveNode() {
         if (chance1 == 0.0) { // = gelijk aan EndNode
-            System.out.println("Eroor");
-            return null;
+            return null; // Eindigt loop
         }else {
            int numb = giveRandom();
             if (numb == 0) {
