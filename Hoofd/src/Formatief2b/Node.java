@@ -3,10 +3,11 @@ import java.util.*;
 
 public class Node {
     private String name;
-    private double chance1;
-    private double chance2;
     private Node option1;
     private Node option2;
+    private double chance1;
+    private double chance2;
+
 
     public Node(String name) {
         this.name = name;
@@ -29,8 +30,9 @@ public class Node {
         if (chance1 == 0.0) { // = gelijk aan EndNode
             return null; // Eindigt loop
         }else {
-           int numb = giveRandom();
-            if (numb == 0) {
+            double Max1 = chance1*100;
+            double numb = giveRandom();
+            if (numb <= Max1) { // Random getal onder max1
                 return option1;
             }else{
                 return option2;
@@ -38,9 +40,9 @@ public class Node {
         }
     }
 
-    public int giveRandom() { // DIT MOET NOG GEFIXT WORDEN MET DE KANS
+    public int giveRandom() {
         Random r = new Random();
-        int ans = r.nextInt(2); // random tussen 1 en 0
+        int ans = r.nextInt(100)+1; // random tussen 1 en 100
         return ans;
     }
 
