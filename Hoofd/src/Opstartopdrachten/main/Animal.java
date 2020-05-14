@@ -1,4 +1,4 @@
-package main;
+package Opstartopdrachten.main;
 
 abstract class Animal {
     // Attributes

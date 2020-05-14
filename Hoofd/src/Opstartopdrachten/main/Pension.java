@@ -1,4 +1,4 @@
-package main;
+package Opstartopdrachten.main;
 import java.util.ArrayList;
 
 public class Pension {

@@ -1,6 +1,4 @@
-package main;
-
-import main.Animal;
+package Opstartopdrachten.main;
 
 public class Dog extends Animal {
     private String name;

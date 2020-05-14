@@ -4,7 +4,6 @@ import java.util.*;
 public class FSM {
     private ArrayList<Node> nodes; // array van nodes
     private char[] woord; // Voor Tekstgebaseerd
-    private String Swoord; // Puur om te printen, geen functionele toevoeging
 
     public FSM(ArrayList<Node> nodes) {
         this.nodes = nodes;
@@ -12,7 +11,6 @@ public class FSM {
 
     public void setWoord(String  woord) {
         this.woord = woord.toCharArray();
-        this.Swoord = woord;
     }
 
     public ArrayList<Node> ChanceMachine() {
@@ -21,22 +19,21 @@ public class FSM {
         ArrayList<Node> NodeAnsList = new ArrayList<Node>(); // Antwoord array
         NodeAnsList.add(0, nodeNow); // Zet stap 0 in array
 
-        while (true) {
-            try {
-                index += 1;
-                Node nodeNew = nodeNow.ReturnChanceNode();
-                NodeAnsList.add(index, nodeNew);
-                nodeNow = nodeNew;
-            } catch(NullPointerException e) {
-                System.out.println("Eindigt na "+ (index-1)+" nodes");
-                NodeAnsList.remove(index-1); // Haalt 'null' weg uit array
+        while (true) { // Loop blijft gaan tot een eindnode is bereikt.
+            index += 1;
+            Node nodeNew = nodeNow.ReturnChanceNode();
+            NodeAnsList.add(index, nodeNew);
+            if (nodeNew.isFinalNode()) { // Wanneer node = eindnode
+                System.out.println("Eindigt na "+ (index+1)+" node(s)");
                 return NodeAnsList;
+            }else {
+                nodeNow = nodeNew;
             }
         }
     }
 
     public ArrayList<Node> TextMachine() {
-        System.out.println("Woord: "+Swoord);
+        System.out.println("Woord: "+String.copyValueOf(woord));
         int len = woord.length;
         int index;
         Node nodeNow = nodes.get(0); // Huidige Node
@@ -44,20 +41,16 @@ public class FSM {
         NodeAnsList.add(0,nodeNow);
 
         for (index = 0; index < len; index++){
-            try {
                 Node nodeNew = nodeNow.ReturnStringNode(woord[index]);
-                NodeAnsList.add(index+1, nodeNew);
-                nodeNow = nodeNew;
-            }catch(NullPointerException e) { // Wanneer null gereturnt word
-                System.out.println(toString(index));
-                NodeAnsList.remove(index);
-                return NodeAnsList;
+                if (nodeNew != null) {
+                    NodeAnsList.add(index + 1, nodeNew);
+                    nodeNow = nodeNew;
+                } else { // Node heeft geen keys die overeen komen met de letter
+                    System.out.println(String.format("Error op plek %d \nHet volgende teken is geen key in machine",index+1 ));
+                    return NodeAnsList;
+                }
             }
-        }
+        System.out.println("Succesvol afgerond");
         return NodeAnsList;
-    }
-
-    public String toString(int index) {  // Error bericht
-        return String.format("Error op plek %d \nHet volgende teken is geen key in machine",index+1 );
-    }
+        }
 }
