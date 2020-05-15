@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/AP_JAVA.iml" filepath="$PROJECT_DIR$/.idea/AP_JAVA.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Hoofd/Hoofd.iml" filepath="$PROJECT_DIR$/Hoofd/Hoofd.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Hoofd/TestModule.iml" filepath="$PROJECT_DIR$/Hoofd/TestModule.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Hoofd/ding.iml" filepath="$PROJECT_DIR$/Hoofd/ding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Formatief-2a/Formatief-2a.iml" filepath="$PROJECT_DIR$/Formatief-2a/Formatief-2a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Formatief-2b/Formatief-2b.iml" filepath="$PROJECT_DIR$/Formatief-2b/Formatief-2b.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Formatief2a/Formatief2a.iml" filepath="$PROJECT_DIR$/Formatief2a/Formatief2a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Formatief2b/Formatief2b.iml" filepath="$PROJECT_DIR$/Formatief2b/Formatief2b.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Opdracht2.iml" filepath="$PROJECT_DIR$/.idea/Opdracht2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Summatief2/Summatief2.iml" filepath="$PROJECT_DIR$/Summatief2/Summatief2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Summatief-2/TestModule.iml" filepath="$PROJECT_DIR$/Summatief-2/TestModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Summatief-2/ding.iml" filepath="$PROJECT_DIR$/Summatief-2/ding.iml" />
     </modules>
   </component>
 </project>

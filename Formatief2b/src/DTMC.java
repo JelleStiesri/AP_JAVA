@@ -1,4 +1,3 @@
-package Formatief2b;
 import java.util.*;
 
 public class DTMC {

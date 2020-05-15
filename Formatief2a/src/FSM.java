@@ -1,4 +1,3 @@
-package Formatief2a;
 import java.util.*;
 
 public class FSM {

@@ -1,7 +1,3 @@
-package Summatief2;
-
-import Opstartopdrachten.Testfile.Steen;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 

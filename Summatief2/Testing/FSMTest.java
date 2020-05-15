@@ -1,5 +1,3 @@
-package Summatief2;
-
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -28,7 +26,6 @@ class FSMTest {
         FSM fsm1 = new FSM(nodeList);
         ArrayList<Node> verwachting = new ArrayList<>(Arrays.asList(node0,node1,endnode2));
         assertEquals(verwachting,fsm1.ChanceMachine());
-
     }
 
     @Test

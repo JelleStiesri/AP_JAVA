@@ -1,5 +1,3 @@
-package Formatief2a;
-
 public class Node {
     private String name;
     private char key1;  // key = vereiste letter om naar volgende stap te gaan
