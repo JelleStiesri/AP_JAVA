@@ -28,7 +28,7 @@ public class Main {
         * aan opties kan gebruiken, de ene node heeft er 2 en de andere 3. Dit kan je
         * uitbereiden naar zoveel je wilt. Dit doe ik later ook voor de Text versie
         */
-        ArrayList<Double> chance0 = new ArrayList<>(Arrays.asList(0.5,0.5)); // Percentages(x100)
+        ArrayList<Double> chance0 = new ArrayList<>(Arrays.asList(0.5,0.5)); // Percentages(x100) // Maakt de set arrays aan
         ArrayList<Node> coptions0 = new ArrayList<>(Arrays.asList(cnode1,cnode2));
         ArrayList<Double> chance1 = new ArrayList<>(Arrays.asList(0.5,0.5));
         ArrayList<Node> coptions1 = new ArrayList<>(Arrays.asList(cnode3,cnode4));
@@ -90,24 +90,19 @@ public class Main {
         tnode3.setKeys(keys13);
         tnode4.setKeys(keys4);
 
-        ArrayList<Node> toptions0 = new ArrayList<>(Arrays.asList(tnode1,tnode4,tnode2));
+        ArrayList<Node> toptions0 = new ArrayList<>(Arrays.asList(tnode1,tnode4,tnode2)); // Maakt options aan
         ArrayList<Node> toptions1 = new ArrayList<>(Arrays.asList(tnode1,tnode2));
         ArrayList<Node> toptions2 = new ArrayList<>(Arrays.asList(tnode3));
         ArrayList<Node> toptions3 = new ArrayList<>(Arrays.asList(tnode4,tnode0));
         ArrayList<Node> toptions4 = new ArrayList<>(Arrays.asList(tnode0,tnode1));
 
-        tnode0.setOptions(toptions0);
+        tnode0.setOptions(toptions0); // Set de options voor elke node
         tnode1.setOptions(toptions1);
         tnode2.setOptions(toptions2);
         tnode3.setOptions(toptions3);
         tnode4.setOptions(toptions4);
 
-        ArrayList<Node> tnodeList = new ArrayList<Node>();
-        tnodeList.add(tnode0);
-        tnodeList.add(tnode1);
-        tnodeList.add(tnode2);
-        tnodeList.add(tnode3);
-        tnodeList.add(tnode4);
+        ArrayList<Node> tnodeList = new ArrayList<>(Arrays.asList(tnode0,tnode1,tnode2,tnode2,tnode4));
 
         FSM Tfsm1 = new FSM(tnodeList); // test 1
         FSM Tfsm2 = new FSM(tnodeList); // test 2
@@ -117,7 +112,7 @@ public class Main {
         Tfsm2.setWoord("AABAB");
         Tfsm3.setWoord("BBABBBZ");
 
-        System.out.println(Tfsm1.TextMachine()+"\n"); // Succesvolle afronding
+        System.out.println(Tfsm1.TextMachine()+"\n"); // Succesvolle afronding (verwacht)
         System.out.println(Tfsm2.TextMachine()+"\n"); // Error
         System.out.println(Tfsm3.TextMachine()+"\n"); // Succesvolle afronding
     }

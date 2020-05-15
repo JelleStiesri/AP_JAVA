@@ -26,13 +26,13 @@ public class FSM {
                 System.out.println("Eindigt na "+ (index+1)+" node(s)");
                 return NodeAnsList;
             }else {
-                nodeNow = nodeNew;
+                nodeNow = nodeNew; // Voor nieuwe loop
             }
         }
     }
 
     public ArrayList<Node> TextMachine() {
-        System.out.println("Woord: "+String.copyValueOf(woord));
+        System.out.println("Woord: "+String.copyValueOf(woord)); // Veranderd array van chars naar string
         int len = woord.length;
         int index;
         Node nodeNow = nodes.get(0); // Huidige Node
