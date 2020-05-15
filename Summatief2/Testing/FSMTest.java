@@ -6,13 +6,13 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FSMTest {
+    Node node0 = new Node("node-0", false);
+    Node node1 = new Node("node-1", false); // Deze worden door beide gebruikt
 
     /**Deze testen zijn niet echt voor de opdracht, maar gewoon om ermee te oefenen*/
 
     @Test
     void chanceMachine() {
-        Node node0 = new Node("node-0", false);
-        Node node1 = new Node("node-1", false);
         Node endnode1 = new Node("1-oog", true);
         Node endnode2 = new Node("2-ogen", true);
         Node endnode3 = new Node("3-ogen", true);
@@ -32,9 +32,7 @@ class FSMTest {
 
     @Test
     void textMachine() {
-        Node node0 = new Node("node-0", false);
-        Node node1 = new Node("node-1", false);
-        Node node2 = new Node("node-1", false);
+        Node node2 = new Node("node-2", false);
         ArrayList<Character> keys01 = new ArrayList<>(Arrays.asList('A','B'));
         ArrayList<Character> keys2 = new ArrayList<>(Arrays.asList('B'));
         node0.setKeys(keys01);

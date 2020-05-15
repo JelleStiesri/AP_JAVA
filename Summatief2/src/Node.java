@@ -48,8 +48,8 @@ public class Node {
             int index = options.indexOf(node);
             totalChance += chances.get(index);
             if (p <= totalChance) {
-                double kans = chances.get(index) * 100; // Alleen om te printen
-                System.out.println(String.format("%s - Kans op deze node was: %d Procent ",node,(int)kans));
+//                double kans = chances.get(index) * 100; // Alleen om te printen
+//                System.out.println(String.format("%s - Kans op deze node was: %d Procent ",node,(int)kans));
                 return node;
             }
         }
@@ -60,5 +60,3 @@ public class Node {
         return name;
     }
 }
-
-
