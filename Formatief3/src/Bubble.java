@@ -13,7 +13,7 @@ public class Bubble {
                         Als hieruit een getal kleiner dan 0 komt zit het huidig geselecteere karakter na het karakter waarmee het vergeleken word.
                         Het huidige geselecteerde karakter word vervolgens hiermee omgewisseld*/
                         String temp = lijst.get(index1);
-                        lijst.set( index1, lijst.get(index2));
+                        lijst.set( index1, lijst.get(index2)); // Draait de karakters om
                         lijst.set(index2,temp);
                     }
                 }
