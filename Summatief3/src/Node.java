@@ -2,10 +2,11 @@ import java.util.*;
 
 public class Node {
     private String name;
-    private List<Stap> korstepad = new LinkedList<>();
-    private Integer distance = Integer.MAX_VALUE;
+    private List<Node> Path = new LinkedList<>();
+    private int distance = Integer.MAX_VALUE; // Max_value = oneindige waarde wanneer afstand nog niet verkend is.
     private Map<Node, Integer> adjacentNodes = new HashMap<>(); // Een map is het zelfde als een dictionary, key+value
     /*AdjecentNodes = Verbonden node (key), afstand (value) */
+
     public Node(String name) {
         this.name = name;
     }
@@ -14,5 +15,35 @@ public class Node {
         adjacentNodes.put(dest, dist);
     }
 
-    //get en set fucnties
+    public void setAdjacentNodes(Map<Node, Integer> aN) {
+        this.adjacentNodes = aN;
+    }
+
+    public void setDistance(int dist) {
+        this.distance = dist;
+    }
+
+    public void setPath(LinkedList<Node> path) {
+        this.Path = path;
+    }
+
+    public void setName(String nm) {
+        this.name = nm;
+    }
+
+    public Map<Node, Integer> getAdjacentNodes() {
+        return adjacentNodes;
+    }
+
+    public Integer getDistance() {
+        return distance;
+    }
+
+    public List<Node> getPath() {
+        return Path;
+    }
+
+    public String toString() {
+        return name;
+    }
 }

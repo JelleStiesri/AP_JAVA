@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Reis {
+public class Reis extends Graaf {
     private List<Stap> Steps = new ArrayList<>();
 
     public void setSteps(List<Stap> steps) {
