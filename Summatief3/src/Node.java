@@ -5,7 +5,7 @@ public class Node {
     private List<Stap> korstepad = new LinkedList<>();
     private Integer distance = Integer.MAX_VALUE;
     private Map<Node, Integer> adjacentNodes = new HashMap<>(); // Een map is het zelfde als een dictionary, key+value
-
+    /*AdjecentNodes = Verbonden node (key), afstand (value) */
     public Node(String name) {
         this.name = name;
     }
