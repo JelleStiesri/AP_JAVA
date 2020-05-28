@@ -1,13 +1,13 @@
 public class Entry implements Comparable<Entry> {
-    private String key;
+    private Steen key;
     private int value;
 
-    public Entry(String key, int value) {
+    public Entry(Steen key, int value) {
         this.key = key;
         this.value = value;
     }
 
-    public String getKey() {
+    public Steen getKey() {
         return key;
     }
 
@@ -15,9 +15,9 @@ public class Entry implements Comparable<Entry> {
         return value;
     }
 
-    public String toString() {
-        return key;
-    }
+//    public String toString() {
+//        return key;
+//    }
 
     @Override
     public int compareTo(Entry employee) {

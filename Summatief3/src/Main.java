@@ -12,7 +12,6 @@ public class Main {
 
         private static void Test()
         {
-            Stap stap1 = new Stap("test");
 
             Node nodeA = new Node("Node-A");
             Node nodeB = new Node("Node-B");

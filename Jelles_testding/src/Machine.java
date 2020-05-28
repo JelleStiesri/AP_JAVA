@@ -6,7 +6,7 @@ public class Machine {
     PriorityQueue<Entry> q = new PriorityQueue<>();
 //    PriorityQueue<Steen> priolijst = new PriorityQueue<>();
 
-    public void addSteen(String steen, int afst) {
+    public void addSteen(Steen steen, int afst) {
 //        priolijst.add(Steen(steen));
         q.add(new Entry(steen,afst));
 //        q.add(new Entry(steen.get(), calculateStringValue(steen.get(x))));
