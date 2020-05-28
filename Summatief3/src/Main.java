@@ -12,6 +12,11 @@ public class Main {
 
         private static void Test()
         {
+            Type Rit = new Type("Rit",1.00);
+            Type Vliegen = new Type("Vliegen", 2.00); // 100 km staat gelijk aan 50$
+            Type Treinrit = new Type("Treinrit",1.66); // 100 km staat gelijk aan 60 minuten
+
+            Reis reis1 = new Reis();
 
             Node nodeA = new Node("Node-A");
             Node nodeB = new Node("Node-B");
@@ -20,18 +25,26 @@ public class Main {
             Node nodeE = new Node("Node-E");
             Node nodeF = new Node("Node-F");
 
-            nodeA.addDestination(nodeB, 10);
-            nodeA.addDestination(nodeC, 15);
+            nodeA.addDestination(nodeB, 10.00); //Dist = Kilometers
+            nodeA.addType(nodeB,Rit);
+            nodeA.addDestination(nodeC, 30.00); //Dist = Euro's
+            nodeA.addType(nodeC,Vliegen);
 
-            nodeB.addDestination(nodeD, 12);
-            nodeB.addDestination(nodeF, 15);
+            nodeB.addDestination(nodeD, 30.00); //Dist = Minuten
+            nodeB.addType(nodeD,Treinrit);
+            nodeB.addDestination(nodeF, 20.00);
+            nodeB.addType(nodeF,Rit);
 
-            nodeC.addDestination(nodeE, 10);
+            nodeC.addDestination(nodeE, 15.00);
+            nodeC.addType(nodeE,Treinrit);
 
-            nodeD.addDestination(nodeF,1);
-            nodeD.addDestination(nodeE,2);
+            nodeD.addDestination(nodeF,2.00);
+            nodeD.addType(nodeF,Rit);
+            nodeD.addDestination(nodeE,5.00);
+            nodeD.addType(nodeE,Rit);
 
-            nodeF.addDestination(nodeE,5);
+            nodeF.addDestination(nodeE,15.00);
+            nodeF.addType(nodeE,Treinrit);
 
             Graaf graaf = new Graaf();
 
@@ -42,18 +55,14 @@ public class Main {
             graaf.addNode(nodeF);
             graaf.addNode(nodeE);
 
-            graaf = Dijkstra.ShortestPath(graaf, nodeA);
+            Node begin = nodeA;
+            Node einde = nodeE;
 
-            Node eindbestemming = nodeE;
-            for (Node ns : eindbestemming.getPath())
-            {
-                System.out.println(ns.toString());
-            }
-            System.out.println(eindbestemming.toString());
-            System.out.println(eindbestemming.getDistance());
+            reis1 = (Reis) Dijkstra.ShortestPath(graaf, begin, einde); // Voert Dijkstra functie uit
+            System.out.println("Totale afstand (reis):"+reis1.getAfstand()+"\n"); // Print totale afstand
+
+            for (Node nd : einde.getPath()) { // Print per Node
+                System.out.println(nd.toString());
+            }System.out.println(einde.toString());
         }
     }
-
-
-
-

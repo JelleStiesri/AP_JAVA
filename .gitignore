@@ -7,7 +7,7 @@ Jammer/src/Graph.java
 Jammer/src/Main.java
 Jammer/src/Node.java
 Jammer/src/Reis.java
-Jammer/src/Rit.java
+Jammer/src/classes.Rit.java
 Jammer/src/Stap.java
-Jammer/src/Treinrit.java
-Jammer/src/Vlucht.java
+Jammer/src/classes.Treinrit.java
+Jammer/src/classes.Vlucht.java
