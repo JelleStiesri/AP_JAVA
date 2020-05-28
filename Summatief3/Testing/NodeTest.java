@@ -6,8 +6,6 @@ import org.junit.jupiter.api.*;
 import org.junit.After;
 import org.junit.Before;
 
-
-
 class NodeTest {
     private Node node1 = new Node("Nodta-1");
 
@@ -27,9 +25,5 @@ class NodeTest {
     @Test // @org.junit.jupiter.api.Test
     void testToString() {
         assertEquals("Node-1",node1.toString());
-
-
-
-
-    }
+            }
 }

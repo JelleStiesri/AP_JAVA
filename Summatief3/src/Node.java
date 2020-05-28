@@ -21,7 +21,7 @@ public class Node {
 
     public void setDistance(int dist) {
         this.distance = dist;
-    }
+    } // Afstand tot begin node
 
     public void setPath(LinkedList<Node> path) {
         this.shortestPath = path;

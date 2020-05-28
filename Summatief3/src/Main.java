@@ -4,10 +4,16 @@ public class Main {
         public static void main(String[] args)
         {
             Test();
+
+//            Stap stap1 = new Stap("test");
+//            stap1.addDestination();
+//            System.out.println(stap1.toString());
         }
 
         private static void Test()
         {
+            Stap stap1 = new Stap("test");
+
             Node nodeA = new Node("Node-A");
             Node nodeB = new Node("Node-B");
             Node nodeC = new Node("Node-C");
@@ -45,6 +51,7 @@ public class Main {
                 System.out.println(ns.toString());
             }
             System.out.println(eindbestemming.toString());
+            System.out.println(eindbestemming.getDistance());
         }
     }
 
