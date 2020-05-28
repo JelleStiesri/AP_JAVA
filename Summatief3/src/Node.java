@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Node {
     private String name;
-    private List<Node> Path = new LinkedList<>();
+    private List<Node> shortestPath = new LinkedList<>();
     private int distance = Integer.MAX_VALUE; // Max_value = oneindige waarde wanneer afstand nog niet verkend is.
     private Map<Node, Integer> adjacentNodes = new HashMap<>(); // Een map is het zelfde als een dictionary, key+value
     /*AdjecentNodes = Verbonden node (key), afstand (value) */
@@ -24,7 +24,7 @@ public class Node {
     }
 
     public void setPath(LinkedList<Node> path) {
-        this.Path = path;
+        this.shortestPath = path;
     }
 
     public void setName(String nm) {
@@ -40,7 +40,7 @@ public class Node {
     }
 
     public List<Node> getPath() {
-        return Path;
+        return shortestPath;
     }
 
     public String toString() {

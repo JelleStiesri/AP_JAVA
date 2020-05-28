@@ -1,8 +1,12 @@
-public class Stap {
+public class Stap extends Node {
     private Reis reis;
 
-    public void setReis(Reis reis) {
-        this.reis = reis;
+    public Stap(String name) {
+        super(name);
+    }
+
+    public void setReis(Reis rs) {
+        this.reis = rs;
     }
 
     public Reis getReis() {
