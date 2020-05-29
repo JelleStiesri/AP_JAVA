@@ -20,6 +20,10 @@ public class Stap {
         return reis;
     }
 
+    public int getNumber() {
+        return number;
+    }
+
     public Double getKosten(){
         return kosten;
     }
@@ -27,7 +31,4 @@ public class Stap {
     public String toString() {
         return "Nummer: "+number;
     }
-
-
-
-}
+    }

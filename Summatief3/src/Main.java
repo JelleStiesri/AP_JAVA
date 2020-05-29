@@ -5,9 +5,6 @@ public class Main {
         {
             Test();
 
-//            Stap stap1 = new Stap("test");
-//            stap1.addDestination();
-//            System.out.println(stap1.toString());
         }
 
         private static void Test()
@@ -15,8 +12,6 @@ public class Main {
             Type Rit = new Type("Rit",1.00);
             Type Vliegen = new Type("Vliegen", 2.00); // 100 km staat gelijk aan 50$
             Type Treinrit = new Type("Treinrit",1.66); // 100 km staat gelijk aan 60 minuten
-
-            Reis reis1 = new Reis();
 
             Node nodeA = new Node("Node-A");
             Node nodeB = new Node("Node-B");
@@ -58,7 +53,10 @@ public class Main {
             Node begin = nodeA;
             Node einde = nodeE;
 
-            reis1 = (Reis) Dijkstra.ShortestPath(graaf, begin, einde); // Voert Dijkstra functie uit
+            graaf =  Dijkstra.calculateShortestPathFromSource(graaf, begin, einde); // Voert Dijkstra functie uit
+            Reis reis1 = new Reis(nodeE); // Nieuwe reis aanmaken
+            reis1.setStapReis(reis1); // Set de reis van de stappen in reis1 naar reis1
+
             System.out.println("Totale afstand (reis):"+reis1.getAfstand()+"\n"); // Print totale afstand
 
             for (Node nd : einde.getPath()) { // Print per Node

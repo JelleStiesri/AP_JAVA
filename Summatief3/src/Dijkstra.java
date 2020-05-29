@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.*;
 
 public class Dijkstra {
-    public static Graaf ShortestPath(Graaf graaf, Node start, Node eind) {
+    public static Graaf calculateShortestPathFromSource(Graaf graaf, Node start, Node eind) {
         start.setDistance(0.00); // Distance NodeA = altijd 0
         Set<Node> settledNodes = new HashSet<>();
         PriorityQueue<PrioNode> unsettledNodes = new PriorityQueue<>(); // De Priority Queue
@@ -26,34 +26,16 @@ public class Dijkstra {
 
                 if (!settledNodes.contains(adjacentNode))
                 {
-                    CalculateMinimumDistance(adjacentNode, edgeWeigh, currentNode);
-                    unsettledNodes.add(new PrioNode(adjacentNode, adjacentNode.getDistance()));
+                    calculateMinimumDistance(adjacentNode, edgeWeigh, currentNode);
+                    unsettledNodes.add(new PrioNode(adjacentNode, adjacentNode.getDistance())); // Maakt nieuwe Prionode aan voor PrioQueue
                 }
             }
             settledNodes.add(currentNode);
         }
-        //Reis vormen
-        Reis reis = new Reis();
-        ArrayList<Node> nodeList = new ArrayList<>();
-        nodeList.addAll(eind.getPath());
-        nodeList.add(eind);
-
-        for (int index = 0; index < nodeList.size()-1; index++){ // Voor alle nodes op het pad naar Node E
-            Node current = nodeList.get(index); // Vertrekpunt (per stap, dus van A -> B)
-            Node next = nodeList.get(index+1); // Aankomstpunt
-
-            Map<Node, Double> nodeMap = current.getAdjacentNodes();
-            Double value = nodeMap.get(next);
-
-            Stap stap = new Stap(value,current.getFactor(next));
-            stap.setNumber(index);
-            stap.setReis(reis);
-            reis.addSteps(stap);
-        }
-        return reis;
+        return graaf;
     }
 
-    private static void CalculateMinimumDistance(Node evaluationNode, Double edgeWeigh, Node sourceNode) {
+    private static void calculateMinimumDistance(Node evaluationNode, Double edgeWeigh, Node sourceNode) {
         Double sourceDistance = sourceNode.getDistance();
         if (sourceDistance + edgeWeigh < evaluationNode.getDistance()) {
             evaluationNode.setDistance(sourceDistance + edgeWeigh);
