@@ -55,7 +55,6 @@ public class Main {
             Node einde = nodeE;
 
             graaf =  Dijkstra.calculateShortestPathFromSource(graaf, begin, einde); // Voert Dijkstra functie uit
-            System.out.println("gra"+graaf);
             Reis reis1 = new Reis(nodeE); // Nieuwe reis aanmaken
             reis1.setStapReis(reis1); // Set de reis van de stappen in reis1 naar reis1
 
