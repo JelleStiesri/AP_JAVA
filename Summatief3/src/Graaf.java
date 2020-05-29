@@ -11,7 +11,11 @@ public class Graaf {
         this.nodes = nodes;
     }
 
-    public Set<Node> getNodes(){
-        return nodes;
+    public Set<Node> getNodes() {
+        if (nodes.isEmpty()) {
+            return null;
+        } else {
+            return nodes;
+        }
     }
 }

@@ -1,9 +1,11 @@
 import java.util.*;
 
 public class Reis extends Graaf {
+    private final Node eind;
     private List<Stap> Steps = new ArrayList<>(); // 1 reis heeft 1 of meerdere stappen
 
     public Reis(Node eind) {
+        this.eind = eind;
         List<Stap> steps = new ArrayList<>();
         ArrayList<Node> nodeList = new ArrayList<>();
         nodeList.addAll(eind.getPath());
@@ -44,11 +46,15 @@ public class Reis extends Graaf {
 
     public Double getAfstand() {
         Double antwoord = 0.00;
-        for (Stap step : Steps) {
-            System.out.println("Stap "+(step.getNumber()+1)+" - Kosten: "+ step.getKosten());
-            antwoord+= step.getKosten();
+        if (Steps.size() >= 1) {
+            for (Stap step : Steps) {
+                System.out.println("Stap " + (step.getNumber() + 1) + " - Kosten: " + step.getKosten());
+                antwoord += step.getKosten();
+            }
+            return antwoord;
+        }else {
+            return null;
         }
-        return antwoord;
     }
 
     public String toString(){

@@ -1,4 +1,4 @@
-class PrioNode implements Comparable<PrioNode> {
+class prioNode implements Comparable<prioNode> {
     /* PrioNode is er om te zorgen dat ik makkelijk een Priority queue kan maken
     Ik maak in de Dijkstra class een neiuwe prionode aan voor elke keer dat er gekeken word
     welk item de laagste value heeft (maar dan blijven de nodes in de prioqueu staan ipv de value)
@@ -6,7 +6,7 @@ class PrioNode implements Comparable<PrioNode> {
     private Node key;
     private Double value;
 
-    public PrioNode(Node key, Double value) {
+    public prioNode(Node key, Double value) {
         this.key = key;
         this.value = value;
     }
@@ -20,7 +20,7 @@ class PrioNode implements Comparable<PrioNode> {
     }
 
     @Override // Ingebouwd in java
-    public int compareTo(PrioNode entry) {
+    public int compareTo(prioNode entry) {
         if (this.getValue() > entry.getValue()) {
             return 1;
         } else if (this.getValue() < entry.getValue()) {

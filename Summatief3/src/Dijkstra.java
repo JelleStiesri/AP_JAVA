@@ -10,9 +10,9 @@ public class Dijkstra {
     public static Graaf calculateShortestPathFromSource(Graaf graaf, Node start, Node eind) {
         start.setDistance(0.00); // Distance NodeA = altijd 0
         Set<Node> settledNodes = new HashSet<>();
-        PriorityQueue<PrioNode> unsettledNodes = new PriorityQueue<>(); // De Priority Queue
+        PriorityQueue<prioNode> unsettledNodes = new PriorityQueue<>(); // De Priority Queue
 
-        unsettledNodes.add(new PrioNode(start, start.getDistance()));
+        unsettledNodes.add(new prioNode(start, start.getDistance()));
 
         while (unsettledNodes.size() != 0)
         {
@@ -27,7 +27,7 @@ public class Dijkstra {
                 if (!settledNodes.contains(adjacentNode))
                 {
                     calculateMinimumDistance(adjacentNode, edgeWeigh, currentNode);
-                    unsettledNodes.add(new PrioNode(adjacentNode, adjacentNode.getDistance())); // Maakt nieuwe Prionode aan voor PrioQueue
+                    unsettledNodes.add(new prioNode(adjacentNode, adjacentNode.getDistance())); // Maakt nieuwe Prionode aan voor PrioQueue
                 }
             }
             settledNodes.add(currentNode);
